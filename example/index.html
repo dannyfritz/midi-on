@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+	<script src="../dist/midi-on.js"></script>
+	<script>
+		if (typeof navigator.requestMIDIAccess !== 'function') {
+			throw new Error('Browser does not support MIDI controllers.');
+		}
+		midi.on('note-on', function (data) {
+			console.log('Note on:', data[1]);
+		});
+		midi.on('note-off', function (data) {
+			console.log('Note off:', data[1]);
+		});
+	</script>
+</head>
+<body>
+	Open your console!
+</body>
+</html>
